@@ -1,0 +1,331 @@
+// imports
+@import url('https://fonts.googleapis.com/css?family=Asap:400,700|Fjalla+One|Work+Sans');
+// Variables
+$white: #FFF;
+$h: 'Fjalla One', sans-serif;
+$p: 'Asap', sans-serif;
+$s: 'Work Sans', sans-serif;
+$y: #f1c40f;
+// sr classes
+
+.sr-h {
+	font-family: 'Fjalla One', sans-serif;
+}
+.sr-p {
+	font-family: 'Asap', sans-serif;
+}
+.sr-s {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 1em;
+}
+.sr-y {
+	background-color: $y;
+	padding: 4px;
+	border-radius: 4px;
+}
+.sr-pnt {
+	color: $white;
+	&::after {
+		content: '.';
+		color: $y;
+		font-size: 900;
+	}
+}
+.btn-sr {
+	border: none;
+	color: #222;
+	display: inline;
+	margin-top: 30px;
+	width: 235px;
+	height: 55px;
+	border-radius: 5px;
+	font-family: $p;
+	font-size: 2em;
+	background-color: $y;
+	padding: 0px 7px;
+	cursor: pointer;
+	transition: .3s;
+	.transi {
+		color: #222;
+		transition: .2s;
+	}
+	&:hover {
+		padding-left: 60px;
+		.transi {
+			color: $white;
+		}
+	}
+	&:focus {
+		border-bottom: 20px solid $white;
+	}
+}
+.bg-grey {
+	background-color: #95a5a6;
+}
+.bg-lgrey {
+	background-color: #CED5D5;
+}
+
+.sr-under {
+	position: relative;
+}
+.sr-under:before {
+	content: "";
+	position: absolute;
+	width: 46%;
+	height: 4px;
+	bottom: 0;
+	left: 50;
+	background-color: $y;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.sr-under:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+// standards
+* {
+	outline: none!important;
+}
+*::selection {
+	background-color: $y;
+	color: $white;
+	opacity: 0.2;
+}
+// Scss Document
+
+html {
+	body {
+		background-color: #3A539B;
+		font-family: $p;
+		nav {
+			
+		}
+		.container,.container-fluid {
+			padding-top: 30px;
+			h1 {
+				color: $white;
+				font-size: 3em;
+				margin-top: 50px;
+			}
+			p {
+				color: $white;
+			}
+			.instuction {
+				width: 50%;
+				margin: 50px 25%;
+				border-radius: 5px;
+				border: thick solid #222;
+				position: relative;
+				padding: 15px;
+				h2 {
+					font-family: $h;
+					color: $white;
+				}
+				p {
+					font-family: $p;
+					color: rgba(219,219,219,1.00);
+				}
+				&::after {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: auto;
+					height: auto;
+					content: attr(alt);
+					background-color: #222;
+					padding: 4px 10px;
+					color: $y;
+					border-bottom-right-radius: 10px;
+					font-family: $p;
+					font-weight: 700;
+					font-size: 1.5em;
+				}
+			}
+		}
+	}
+}
+// form 
+.form1 {
+	h2 {
+		font-family: $s;
+		color: $white;
+		&::after {
+			content: '.';
+			color: $y;
+			font-size: 900;
+		}
+	}
+	.plaats {
+		width: 235px;
+		padding: 5px;
+		text-align: center;
+		border-radius: 5px;
+		border: 1px solid $white;
+		background-color: $white;
+		font-family: $s;
+		font-size: 1.2em;
+		transition: .2s;
+		text-transform: capitalize;
+		&:focus {
+			border: 1px solid #222;
+		}
+	}
+	.postcodeN {
+		width: 30px;
+		padding: 5px;
+		text-align: center;
+		border-radius: 0px;
+		border: 1px solid $white;
+		background-color: $white;
+		margin-left: -2px;
+		margin-right: -2px;
+		font-family: $s;
+		font-size: 1.2em;
+		transition: .2s;
+		&:focus {
+			border: 1px solid #222;
+		}
+	}
+	.postcodeNB {
+		border: 0px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		width: 30px;
+		padding: 5px;
+		text-align: center;
+		border: 1px solid $white;
+		background-color: $white;
+		margin-left: 0px;
+		margin-right: -2px;
+		font-family: $s;
+		font-size: 1.2em;
+		transition: .2s;
+		&:focus {
+			border: 1px solid #222;
+		}
+	}
+	.postcodeNE {
+		border: 0px;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		width: 30px;
+		padding: 5px;
+		text-align: center;
+		border: 1px solid $white;
+		background-color: $white;
+		margin-left: -2px;
+		margin-right: 0px;
+		font-family: $s;
+		font-size: 1.2em;
+		transition: .2s;
+		&:focus {
+			border: 1px solid #222;
+		}
+	}
+	.postcode {
+		width: 105px;
+		margin-left: 8px;
+		padding: 5px;
+		text-align: center;
+		border-radius: 5px;
+		border: 1px solid $white;
+		background-color: $white;
+		font-family: $s;
+		font-size: 1.2em;
+		transition: .2s;
+		text-transform: uppercase;
+		&:focus {
+			border: 1px solid #222;
+		}
+	}
+	.huisnummer {
+		width: 75px;
+		margin-left: 5px;
+		padding: 5px;
+		text-align: center;
+		border-radius: 5px;
+		border: 1px solid $white;
+		background-color: $white;
+		font-family: $s;
+		font-size: 1.2em;
+		transition: .2s;
+		&:focus {
+			border: 1px solid #222;
+		}
+	}
+	.straatnaam {
+		width: 150px;
+		padding: 5px;
+		text-align: center;
+		border-radius: 5px;
+		border: 1px solid $white;
+		background-color: $white;
+		font-family: $s;
+		font-size: 1.2em;
+		transition: .2s;
+		text-transform: capitalize;
+		&:focus {
+			border: 1px solid #222;
+		}
+	}
+}
+
+// responsive
+@media screen and (max-width: 1000px) {
+	.instuctions {
+		.instuction {
+			width: 100%!important;
+			margin: 50px 0%!important;
+			border-radius: 5px;
+			border: thick solid #222;
+			position: relative;
+			padding: 15px;
+			h2 {
+				font-family: $h;
+				color: $white;
+				margin-top: 50px;
+			}
+			p {
+				font-family: $p;
+				color: rgba(219,219,219,1.00);
+			}
+			img {
+				width: 100%;
+			}
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: auto;
+				height: auto;
+				content: attr(alt);
+				background-color: #222;
+				padding: 4px 10px;
+				color: $y;
+				border-bottom-right-radius: 10px;
+				font-family: $p;
+				font-weight: 700;
+				font-size: 1.5em;
+			}
+		}
+	}
+}
+// keyframes
+@keyframes lines {
+	from {
+		background-position: 0px 0px;
+	}
+	to {
+		background-position: 0px 16px;
+	}
+}
+// animations 
+.progress-bar-striped {
+	animation: lines 0.4s linear infinite;
+}
